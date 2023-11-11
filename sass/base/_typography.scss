@@ -1,0 +1,52 @@
+@use "../abstracts" as *;
+
+body {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	/* font-size: 16px; */
+	line-height: 1.7;
+	color: $color-grey-dark;
+	padding: 3rem; /* padding is not getting inherited */
+
+	box-sizing: border-box;
+}
+
+.heading-primary {
+	color: $color-white;
+	text-transform: uppercase;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden; /* to get rid of the shake in the end of the animation */
+	margin-bottom: 6rem;
+
+	&__text--main {
+		/* block level elements occupy the entire with they have available and create line breaks before and after them */
+		display: block; /* span is by default an inline element */
+		font-size: 6rem;
+		font-weight: 400;
+		letter-spacing: 3.5rem;
+		margin-right: -3.5rem;
+
+		-webkit-animation-name: moveInLeft;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-timing-function: ease-out;
+
+		animation-name: moveInLeft;
+		animation-duration: 1s;
+		animation-timing-function: ease-out;
+
+		/*animation-iteration-count: 3;
+		 animation-delay: 3s; */
+	}
+
+	&__text--sub {
+		display: block; /* span is by default an inline element */
+		font-size: 2rem;
+		font-weight: 700;
+		letter-spacing: 1.75rem;
+		margin-right: -1.75rem;
+
+		-webkit-animation: moveInRight 1s ease-out;
+
+		animation: moveInRight 1s ease-out;
+	}
+}
